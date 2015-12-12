@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 /**
@@ -46,7 +45,7 @@ public class CHMOD {
     }
 
     /**
-     * Updates the permissions array
+     * Updates the permissions array.
      */
     private static void toPermissions() {
         for (int x = 0; x < 3; x++) {
@@ -56,14 +55,12 @@ public class CHMOD {
             } else {
                 permissions[x] = "-";
             }
-
             //--->Handles write (w) permissions
             if (binary[x].substring(1, 2).equals("1")) {
                 permissions[x] += "w";
             } else {
                 permissions[x] += "-";
             }
-
             //--->Handles execute (s/t/x) permissions
             if (binary[x].substring(2, 3).equals("1")) {
                 if (input[0] == x + 1) {
